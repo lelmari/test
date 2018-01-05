@@ -1,0 +1,104 @@
+---
+title: "uvhbjk"
+output:
+  html_document:
+    df_print: paged
+bibliography: book.bib
+toc: yes
+---
+# yaml шапка - шаблон (вставляют важные аргументы, относящиеся к файлу вообще)
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+__привет как дела__
+В своей работе @gordon02 раскрыл
+
+* катя
+* маша 
+ * маша петрова
+
+< > - скобки для того, чтобы была видна ссылка и она была кликабелна # <http://rmarkdown.rstudio.com>.
+[1]
+
+# [Ссылка 1](https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html)
+
+
+Вставка картинки
+# ![](https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png)
+голая метка
+# [метка]:http://rmarkdown.rstudio.com  (???)
+
+оформление кода - через три черточки (бек тик). можно использовать стиль любого языка, напрмиер, питона, если добавить ```{python}
+```print("hello")```
+
+```{r}
+a <- 22
+```
+
+В моих данных `r a` переменных
+
+цитаты: >пробел + использовать html-тег <br> чтобы разделить строчки 
+
+> Жили были три медведа, <br>
+> Чук и гек, <br>
+> И политрук <br>
+
+
+разрыв страницы ***
+
+RMD понимает html (можно использовать html внутри маркдауна)
+
+__Таблицы__ лучше делать в экселе, потом вставлять в этот сайт http://www.tablesgenerator.com/markdown_tables и забирать оттуда готовый код
+
+PANDOC - программа, которая вшита в rmarkdown
+нумированные примеры: примеры нумеруются автоматически
+
+(@) Славный пример номер раз.
+(@) Славный пример номер два.
+(@three) Славный пример номер три, у которого есть *имя*.
+
+Я могу сослаться на пример (@three)!
+
+
+
+код чанкс: в одном маркдауне можно использовать и смешивать разные языка программирования
+{r setup,--- это имя чанка (для облегчения навигации и кеширования)
+echo = FALSE - показывает только резульатт кода, сам код - не показывает 
+eval = FALSE - только код, который не исполняется 
+
+theme: spacelab
+    highlight: pygments
+    toc: yes - заголовок вообще есть
+    toc_position: right
+    toc_depth: 3 - до какого уровня подробно
+    toc_float: yes - следует ли при прокручивании страницы
+    smooth_scroll: false -
+
+Отображение датафреймов
+
+```{r}
+mtcars
+```
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, fig.height = 3)
+```
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
